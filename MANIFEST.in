@@ -1,0 +1,3 @@
+include README.rst VERSIONS.rst
+include LICENSE
+recursive-include react js *.js
