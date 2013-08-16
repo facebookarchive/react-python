@@ -1,0 +1,8 @@
+PyReact
+=======
+
+PyReact is a Python wrapper around the `React <https://facebook.github.io/react/>`_ JavaScript library and `JSX <https://facebook.github.io/react/docs/jsx-in-depth.html>`_. 
+
+Specifically, it provides an API to transform JSX files into JavaScript from within your Python application, as well as providing access to the latest React build.
+
+For more information, please visit the `PyReact project on GitHub <https://github.com/facebook/react-python/>`_.
