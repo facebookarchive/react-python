@@ -21,6 +21,7 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     packages=find_packages(),
+    include_package_data=True,
     package_data={'js': [
         'js/react.js',
         'js/react.min.js',
