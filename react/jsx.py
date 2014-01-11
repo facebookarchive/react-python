@@ -29,7 +29,7 @@ class JSXTransformer(object):
                     'JSXTransformer.transform', i.read())
                 js = result['code']
                 if js_path:
-                    with open(js_path, 'w') as o:
+                    with open(js_path, 'wb') as o:
                         o.write(js.encode('utf8'))
                 return js
         except execjs.ProgramError as e:

@@ -17,16 +17,16 @@ from pipeline.exceptions import CompilerError
 from react.jsx import JSXTransformer, TransformError
 
 class JSXCompiler(CompilerBase):
-    output_extension = '.js'
+    output_extension = 'js'
 
-    def __init__(self):
-        CompilerBase.__init__(self)
+    def __init__(self, *args, **kwargs):
+        CompilerBase.__init__(self, *args, **kwargs)
         self.transformer = JSXTransformer()
 
-    def match_file(self, filename):
+    def match_file(self, path):
         return path.endswith('.jsx')
 
-    def compile(self, infile, outfile, outdated=False, force=False):
+    def compile_file(self, infile, outfile, outdated=False, force=False):
         if not outdated and not force:
             return
         try:
