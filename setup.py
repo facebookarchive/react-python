@@ -25,6 +25,8 @@ setup(
     package_data={'js': [
         'js/react.js',
         'js/react.min.js',
+        'js/react-with-addons.js',
+        'js/react-with-addons.min.js',
         'js/JSXTransformer.js',
     ]},
     install_requires=[

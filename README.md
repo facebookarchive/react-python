@@ -1,6 +1,6 @@
 # PyReact
 
-PyReact is a Python wrapper around the [React](http://facebook.github.io/react/) JavaScript library and [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html). 
+PyReact is a Python wrapper around the [React](http://facebook.github.io/react/) JavaScript library and [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html).
 
 Specifically, it provides an API to transform JSX files into JavaScript from within your Python application, as well as providing access to the latest React build.
 
@@ -13,7 +13,7 @@ Specifically, it provides an API to transform JSX files into JavaScript from wit
 
 Alternatively, add it into your `requirements` file:
 
-    PyReact==0.1.1
+    PyReact==0.2.0
 
 
 **Dependencies**: PyReact uses [PyExecJS](https://github.com/doloopwhile/PyExecJS) to execute the bundled React code, which requires that a JS runtime environment is installed on your machine. We don't explicitly set a dependency on a runtime environment; Mac OS X comes bundled with one. If you're on a different platform, we recommend [PyV8](https://code.google.com/p/pyv8/).
@@ -22,7 +22,7 @@ Alternatively, add it into your `requirements` file:
 
 Transform your JSX files via the provided `jsx` module::
 
-```python    
+```python
 from react import jsx
 
 # For multiple paths, use the JSXTransformer class.
