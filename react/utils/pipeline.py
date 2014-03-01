@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import absolute_import
+
 from pipeline.compilers import CompilerBase
 from pipeline.exceptions import CompilerError
 from react.jsx import JSXTransformer, TransformError
