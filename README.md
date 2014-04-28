@@ -13,7 +13,7 @@ Specifically, it provides an API to transform JSX files into JavaScript from wit
 
 Alternatively, add it into your `requirements` file:
 
-    PyReact==0.2.1
+    PyReact==0.3.0
 
 
 **Dependencies**: PyReact uses [PyExecJS](https://github.com/doloopwhile/PyExecJS) to execute the bundled React code, which requires that a JS runtime environment is installed on your machine. We don't explicitly set a dependency on a runtime environment; Mac OS X comes bundled with one. If you're on a different platform, we recommend [PyV8](https://code.google.com/p/pyv8/).
