@@ -7,7 +7,7 @@ setup(
     version=VERSION,
     author='Kunal Mehta',
     author_email='kunalm@fb.com',
-    url='https://github.com/facebook/PyReact',
+    url='https://github.com/reactjs/react-python/',
     license='Apache-2.0',
     description='Python bridge to JSX & the React JavaScript library.',
     long_description=open('DESCRIPTION').read(),
