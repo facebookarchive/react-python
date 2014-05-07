@@ -15,7 +15,7 @@
 from os.path import abspath, dirname, isfile, join
 
 
-JS_ROOT = abspath(join(dirname(__file__), 'js'))
+JS_ROOT = abspath(join(dirname(__file__), 'js/react'))
 
 def path_for(react_file):
     path = join(JS_ROOT, react_file)

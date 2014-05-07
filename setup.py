@@ -23,11 +23,11 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={'js': [
-        'js/react.js',
-        'js/react.min.js',
-        'js/react-with-addons.js',
-        'js/react-with-addons.min.js',
-        'js/JSXTransformer.js',
+        'js/react/react.js',
+        'js/react/react.min.js',
+        'js/react/react-with-addons.js',
+        'js/react/react-with-addons.min.js',
+        'js/react/JSXTransformer.js',
     ]},
     install_requires=[
         'PyExecJS >= 1.0.4',
