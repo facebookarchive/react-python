@@ -4,3 +4,4 @@
 dist/
 MANIFEST
 build/
+node_modules
