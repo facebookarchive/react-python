@@ -34,6 +34,14 @@ for jsx_path, js_path in my_paths:
 jsx.transform('path/to/input/file.jsx', 'path/to/output/file.js')
 ```
 
+You can also use ``transform_string(jsx)`` method to transform strings:
+
+```python
+from react import jsx
+transformer = jsx.JSXTransformer()
+js = transformer.transform_string(jsx)
+```
+
 **Django**: PyReact includes a JSX compiler for [django-pipeline](https://github.com/cyberdelia/django-pipeline). It has been tested with django-pipeline 1.3.20, but may work with other versions too. Add it to your project's pipeline settings like this:
 
 ```python
