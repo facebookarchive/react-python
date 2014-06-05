@@ -17,23 +17,34 @@ import react.source
 
 
 class JSXTransformer(object):
+
     def __init__(self):
         path = react.source.path_for('JSXTransformer.js')
         with open(path, 'rU') as f:
             self.context = execjs.compile(f.read())
 
-    def transform(self, jsx_path, js_path=None):
+    def transform_string(self, jsx):
+        """ Transform ``jsx`` JSX string into javascript
+
+        :param jsx: JSX source code
+        :type jsx: basestring
+        :return: compiled JS code
+        :rtype: str
+        """
         try:
-            with open(jsx_path, 'rU') as i:
-                result = self.context.call(
-                    'JSXTransformer.transform', i.read())
-                js = result['code']
-                if js_path:
-                    with open(js_path, 'wb') as o:
-                        o.write(js.encode('utf8'))
-                return js
+            result = self.context.call('JSXTransformer.transform', jsx)
+            js = result['code']
+            return js
         except execjs.ProgramError as e:
             raise TransformError(e.message[7:])
+
+    def transform(self, jsx_path, js_path=None):
+        with open(jsx_path, 'rU') as i:
+            js = self.transform_string(i.read())
+            if js_path:
+                with open(js_path, 'wb') as o:
+                    o.write(js.encode('utf8'))
+            return js
 
 
 class TransformError(Exception):
