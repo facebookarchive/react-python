@@ -13,5 +13,5 @@
 # limitations under the License.
 
 
-VERSION = '0.3.1'
-REACT_VERSION = '0.10.0'
+VERSION = '0.4.0'
+REACT_VERSION = '0.11.0'
