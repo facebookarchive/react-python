@@ -19,15 +19,15 @@ from unittest import TestCase
 
 
 class TestJSXTransformer(TestCase):
-    
+
     def test_transform(self):
         jsx_path = join(TEST_ROOT, 'files/test.jsx')
         js_path = join(TEST_ROOT, 'files/test.js')
-        
+
         with open(js_path, 'rU') as js:
             self.assertEquals(
                 jsx.transform(jsx_path),
-                js.read())
+                unicode(js.read()))
 
         malformed_path = join(TEST_ROOT, 'files/malformed.jsx')
         self.assertRaises(
