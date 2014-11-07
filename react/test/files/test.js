@@ -1,9 +1,7 @@
-/** @jsx React.DOM */
-
 var testComponent =
-  React.DOM.div(null, 
-    React.DOM.ul(null, 
-      React.DOM.li(null, "Hello"), 
-      React.DOM.li(null, "World")
+  React.createElement("div", null, 
+    React.createElement("ul", null, 
+      React.createElement("li", null, "Hello"), 
+      React.createElement("li", null, "World")
     )
   );

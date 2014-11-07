@@ -11,3 +11,4 @@ This file lists the version(s) of React that are bundled with each version of Py
 | 0.3.1   | 0.10.0|
 | 0.4.0   | 0.11.0|
 | 0.4.1   | 0.11.2|
+| 0.5.0   | 0.12.0|
