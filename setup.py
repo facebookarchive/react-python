@@ -30,6 +30,6 @@ setup(
         'js/react/JSXTransformer.js',
     ]},
     install_requires=[
-        'PyExecJS >= 1.0.4',
+        'PyExecJS >= 1.0.5',
     ]
 )

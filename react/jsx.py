@@ -18,6 +18,8 @@ import react.source
 
 class JSXTransformer(object):
 
+    JSX_TRANSFORMER_JS_EXPR = '(global.JSXTransformer || module.exports)'
+
     def __init__(self):
         path = react.source.path_for('JSXTransformer.js')
         with open(path, 'rU') as f:
@@ -37,7 +39,8 @@ class JSXTransformer(object):
         """
         opts = {'harmony': harmony, 'stripTypes': strip_types}
         try:
-            result = self.context.call('JSXTransformer.transform', jsx, opts)
+            result = self.context.call(
+                '%s.transform' % self.JSX_TRANSFORMER_JS_EXPR, jsx, opts)
         except execjs.ProgramError as e:
             raise TransformError(e.message[7:])
         js = result['code']
