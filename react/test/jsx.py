@@ -33,3 +33,15 @@ class TestJSXTransformer(TestCase):
         self.assertRaises(
             jsx.TransformError,
             lambda: jsx.transform(malformed_path))
+
+    def test_transform_string(self):
+        result = jsx.transform_string('<div />')
+        self.assertEquals(result, 'React.createElement("div", null)')
+
+    def test_transform_string_harmony(self):
+        result = jsx.transform_string('var {x} = y', harmony=True)
+        self.assertEquals(result, 'var $__0=  y,x=$__0.x')
+
+    def test_transform_string_strip_types(self):
+        result = jsx.transform_string('var x: Number = 1', strip_types=True)
+        self.assertEquals(result, 'var x         = 1')
