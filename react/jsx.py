@@ -23,24 +23,29 @@ class JSXTransformer(object):
         with open(path, 'rU') as f:
             self.context = execjs.compile(f.read())
 
-    def transform_string(self, jsx):
+    def transform_string(self, jsx, harmony=False, strip_types=False):
         """ Transform ``jsx`` JSX string into javascript
 
         :param jsx: JSX source code
         :type jsx: basestring
+        :keyword harmony: Transform ES6 code into ES3 (default: False)
+        :type harmony: bool
+        :keyword strip_types: Strip type declarations (default: False)
+        :type harmony: bool
         :return: compiled JS code
         :rtype: str
         """
+        opts = {'harmony': harmony, 'stripTypes': strip_types}
         try:
-            result = self.context.call('JSXTransformer.transform', jsx)
-            js = result['code']
-            return js
+            result = self.context.call('JSXTransformer.transform', jsx, opts)
         except execjs.ProgramError as e:
             raise TransformError(e.message[7:])
+        js = result['code']
+        return js
 
-    def transform(self, jsx_path, js_path=None):
+    def transform(self, jsx_path, js_path=None, **kwargs):
         with open(jsx_path, 'rU') as i:
-            js = self.transform_string(i.read())
+            js = self.transform_string(i.read(), **kwargs)
             if js_path:
                 with open(js_path, 'wb') as o:
                     o.write(js.encode('utf8'))
@@ -52,5 +57,8 @@ class TransformError(Exception):
         Exception.__init__(self, message)
 
 
-def transform(jsx_path, js_path=None):
-    return JSXTransformer().transform(jsx_path, js_path)
+def transform(jsx_path, **opts):
+    return JSXTransformer().transform(jsx_path, **opts)
+
+def transform_string(jsx, **opts):
+    return JSXTransformer().transform_string(jsx, **opts)
