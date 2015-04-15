@@ -34,4 +34,4 @@ class JSXCompiler(CompilerBase):
         try:
             return self.transformer.transform(infile, outfile)
         except TransformError as e:
-            raise CompilerError(e.message)
+            raise CompilerError(str(e))
