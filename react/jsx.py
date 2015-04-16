@@ -42,7 +42,7 @@ class JSXTransformer(object):
             result = self.context.call(
                 '%s.transform' % self.JSX_TRANSFORMER_JS_EXPR, jsx, opts)
         except execjs.ProgramError as e:
-            raise TransformError(e.message[7:])
+            raise TransformError(str(e))
         js = result['code']
         return js
 
