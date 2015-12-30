@@ -1,3 +1,5 @@
+### NOTE: This project is no longer actively maintained.
+
 # PyReact
 
 PyReact is a Python wrapper around the [React](http://facebook.github.io/react/) JavaScript library and [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html).
